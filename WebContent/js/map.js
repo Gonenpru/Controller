@@ -60,7 +60,7 @@ var numDeltas = 100;
 var delay = 100;
 var deltaLat = [];
 var deltaLng = [];
-var icon = '../';
+var icon = './images/Plane_marker_nano.png';
 
 function transition(result, data){
     if (result.new === 0){

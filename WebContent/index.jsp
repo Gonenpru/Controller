@@ -32,7 +32,7 @@
 </script>
 <style type="text/css">
 #map {
-	height: 92vh;
+	height: 97vh;
 	widht: 100vh;
 }
 </style>
@@ -61,11 +61,6 @@
 		<jsp:include page="includes/header_section.jsp" />
 		<div id="map"></div>
 	</div>
-	<footer>
-	<p>
-		&copy 2017 Gonenpru Corporation</a>
-	</p>
-	</footer>
 	<script src="js/jquery.nicescroll.js"></script>
 	<script src="js/scripts.js"></script>
 	<script src="js/bootstrap.min.js"></script>
