@@ -58,7 +58,7 @@ function initMap() {
 }
 
 var numDeltas = 100;
-var delay = 90;
+var delay = 108;
 var deltaLat = [];
 var deltaLng = [];
 var icon = './images/plane_marker.png';
@@ -117,7 +117,10 @@ function moveMarker(id, data){
     }else {
       positions[a].pos[0] = 0;
       positions[a].pos[1] = 0;
-      console.log("Finish");
+      if (data.out == 1){
+    	  markers[a].setMap(null);
+    	  console.log("Finished : " +data.plane_id);
+      }
     }
   }
 }

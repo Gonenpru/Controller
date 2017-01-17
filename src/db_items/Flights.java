@@ -62,7 +62,7 @@ public class Flights implements java.io.Serializable {
 	
 	@Column(name="date_departure")
 	private Timestamp dateDeparture;
-	
+		
 	public Flights() {
 	}
 
