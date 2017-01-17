@@ -52,7 +52,7 @@
 		<div class="left-side-inner">
 			<ul class="nav nav-pills nav-stacked custom-nav">
 				<li><s:a name="action" value="show_map"><i class="fa fa-globe" ></i><span>Map</span></s:a></li>
-				<li><s:a name="action" value=""><i class="fa fa-pie-chart" ></i><span>Total Flights</span></s:a></li>
+				<li><s:a name="action" value="show_flights"><i class="fa fa-table" ></i><span>Historical Flights</span></s:a></li>
 				<li><s:a name="action" value=""><i class="fa fa-bar-chart" ></i><span>Flights</span></s:a></li>
 			</ul>
 		</div>
