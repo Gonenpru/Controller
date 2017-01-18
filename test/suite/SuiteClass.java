@@ -9,10 +9,12 @@ import action.TestFlightsAction;
 import dao.TestFlightsDao;
 import hibernate.*;
 import items.TestFlights;
+import login.TestLoginAction;
 
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({
+	TestLoginAction.class,
 	TestConnectionHibernate.class,
 	TestInitHibernate.class,
 	TestFlights.class,
