@@ -28,33 +28,72 @@ public class FlightsDAO extends HibernateUtils {
 	public String getPlaneName(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
-		Query query = session.createSQLQuery("select planeName(:plane_id)").setInteger("plane_id", id);
-		String name = String.valueOf(query.list());
-		return deleteBrackets(name);
+		Query query = null;
+		try {
+			 query = session.createSQLQuery("select planeName(:plane_id)").setInteger("plane_id", id);
+		}catch (HibernateException e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
+		
+		if (query != null){
+			String name = String.valueOf(query.list());
+			return deleteBrackets(name);
+		}
+		
+		return "error";
 	}
 
 	public String getGateName(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
-		Query query = session.createSQLQuery("select gateName(:gate_id)").setInteger("gate_id", id);
-		String name = String.valueOf(query.list());
-		return deleteBrackets(name);
+		Query query = null;
+		try {
+			query = session.createSQLQuery("select gateName(:gate_id)").setInteger("gate_id", id);
+		}catch (HibernateException e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
+		
+		if (query != null){
+			String name = String.valueOf(query.list());
+			return deleteBrackets(name);
+		}
+		return "error";
 	}
 
 	public String getRouteName(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
-		Query query = session.createSQLQuery("select routeName(:route_id)").setInteger("route_id", id);
-		String name = String.valueOf(query.list());
-		return deleteBrackets(name);
+		Query query = null;
+		try {
+			query = session.createSQLQuery("select routeName(:route_id)").setInteger("route_id", id);
+		}catch (HibernateException e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
+		if (query != null){
+			String name = String.valueOf(query.list());
+			return deleteBrackets(name);
+		}
+		return "error";
 	}
 	
 	public String getAirlineName(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
-		Query query = session.createSQLQuery("select airlineName(:plane_id)").setInteger("plane_id", id);
-		String name = String.valueOf(query.list());
-		return deleteBrackets(name);
+		Query query = null;
+		try {
+			query = session.createSQLQuery("select airlineName(:plane_id)").setInteger("plane_id", id);
+		}catch (HibernateException e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
+		if (query != null){
+			String name = String.valueOf(query.list());
+			return deleteBrackets(name);
+		}
+		return "error";
 	}
 
 	public String deleteBrackets(String str) {

@@ -23,7 +23,6 @@ public class FlightsAction extends ActionSupport {
 	}
 	
 	public String execute(){
-		System.out.println("Execute Flight");
 		if (flightsDao.list() != null) {
 			this.flightsList = flightsDao.list();
 			for (int i = 0; i < flightsList.size(); i++){
