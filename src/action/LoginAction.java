@@ -36,7 +36,7 @@ public class LoginAction extends ActionSupport {
 		}
 		return ERROR;
 	}
-
+	
 	public String logout() throws Exception {
 		//        HttpSession session = ServletActionContext.getRequest().getSession();
 		//        session.removeAttribute("logined");
