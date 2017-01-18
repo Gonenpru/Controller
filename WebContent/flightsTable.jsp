@@ -14,7 +14,9 @@
 <meta name="keywords" content="Sales Manager Dashboard Panel" />
 <script type="application/x-javascript">
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 </script>
 <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
@@ -63,11 +65,15 @@
 					</s:a></li>
 				<li><s:a name="action" value="show_flights">
 						<i class="fa fa-table"></i>
-						<span>Flights</span>
+						<span>Historical Flights</span>
 					</s:a></li>
-				<li><s:a name="action" value="">
-						<i class="fa fa-bar-chart"></i>
-						<span>Flights</span>
+				<li><s:a name="action" value="show_flow">
+						<i class="fa fa-area-chart"></i>
+						<span>Planes flow</span>
+					</s:a></li>
+				<li><s:a name="action" value="show_pie">
+						<i class="fa fa-pie-chart"></i>
+						<span>Terminals</span>
 					</s:a></li>
 			</ul>
 		</div>
