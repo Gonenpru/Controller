@@ -39,7 +39,7 @@
 	<script>
 
 $(function () {
-    $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+    $.getJSON('/Controller/data/planes_flow.json', function (data) {
 
         // Create the chart
         Highcharts.stockChart('container', {
