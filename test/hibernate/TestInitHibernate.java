@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package hibernate;
 
 import static org.junit.Assert.assertNotNull;
@@ -8,11 +11,20 @@ import org.junit.Test;
 import initialization.InitHibernate;
 import utils.HibernateUtils;
 
+/**
+ * The Class TestInitHibernate.
+ */
 public class TestInitHibernate {
 
+	/** The init hibernate. */
 	InitHibernate initHibernate;
+	
+	/** The hibernate utils. */
 	HibernateUtils hibernateUtils;
 
+	/**
+	 * Test context initialized.
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void testContextInitialized() {
@@ -22,6 +34,9 @@ public class TestInitHibernate {
 	}
 	
 
+	/**
+	 * Test context destroyed.
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void testContextDestroyed() {	

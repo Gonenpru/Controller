@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package dao;
 
 import static org.junit.Assert.assertEquals;
@@ -10,15 +13,25 @@ import org.junit.Test;
 
 import utils.HibernateUtils;
 
+/**
+ * The Class TestFlightsDao.
+ */
 public class TestFlightsDao {
 
+	/** The flights dao. */
 	private FlightsDAO flightsDao;
 
+	/**
+	 * Initialize hibernate.
+	 */
 	@Before
 	public void initializeHibernate(){
 		HibernateUtils.start();
 	}
 	
+	/**
+	 * Inits the flights dao.
+	 */
 	@Before
 	public void initFlightsDao(){
 		flightsDao = new FlightsDAO();
@@ -26,6 +39,9 @@ public class TestFlightsDao {
 		session.beginTransaction();
 	}
 	
+	/**
+	 * Test get gate name.
+	 */
 	@Test
 	public void testGetGateName() {
 		String name_1 = flightsDao.getGateName(1);
@@ -37,6 +53,9 @@ public class TestFlightsDao {
 		assertEquals(name_1, fin);
 	}
 	
+	/**
+	 * Test get plane name.
+	 */
 	@Test
 	public void testGetPlaneName() {
 		String name_1 = flightsDao.getPlaneName(1);
@@ -48,6 +67,9 @@ public class TestFlightsDao {
 		assertEquals(name_1, fin);
 	}
 	
+	/**
+	 * Test get route name.
+	 */
 	@Test
 	public void testGetRouteName() {
 		String name_1 = flightsDao.getRouteName(1);
@@ -59,6 +81,9 @@ public class TestFlightsDao {
 		assertEquals(name_1, fin);
 	}
 	
+	/**
+	 * Test get airline name.
+	 */
 	@Test
 	public void testGetAirlineName() {
 		String name_1 = flightsDao.getAirlineName(1);

@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package dao;
 
 import java.util.List;
@@ -6,11 +9,20 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
+
 import db_items.Flights;
 import utils.HibernateUtils;
 
+/**
+ * The Class FlightsDAO.
+ */
 public class FlightsDAO extends HibernateUtils {
-
+	
+	/**
+	 * List.
+	 *
+	 * @return the list
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Flights> list() {
 		Session session = HibernateUtils.getSessionFactory().openSession();
@@ -24,7 +36,13 @@ public class FlightsDAO extends HibernateUtils {
 		}
 		return flights;
 	}
-
+	
+	/**
+	 * Gets the plane name.
+	 *
+	 * @param id the id
+	 * @return the plane name
+	 */
 	public String getPlaneName(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
@@ -44,6 +62,12 @@ public class FlightsDAO extends HibernateUtils {
 		return "error";
 	}
 
+	/**
+	 * Gets the gate name.
+	 *
+	 * @param id the id
+	 * @return the gate name
+	 */
 	public String getGateName(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
@@ -62,6 +86,12 @@ public class FlightsDAO extends HibernateUtils {
 		return "error";
 	}
 
+	/**
+	 * Gets the route name.
+	 *
+	 * @param id the id
+	 * @return the route name
+	 */
 	public String getRouteName(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
@@ -79,6 +109,12 @@ public class FlightsDAO extends HibernateUtils {
 		return "error";
 	}
 	
+	/**
+	 * Gets the airline name.
+	 *
+	 * @param id the id
+	 * @return the airline name
+	 */
 	public String getAirlineName(int id) {
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
@@ -96,6 +132,12 @@ public class FlightsDAO extends HibernateUtils {
 		return "error";
 	}
 
+	/**
+	 * Delete brackets.
+	 *
+	 * @param str the str
+	 * @return the string
+	 */
 	public String deleteBrackets(String str) {
 		return str.substring(1, str.length() - 1);
 	}

@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package login;
 
 import static org.junit.Assert.assertEquals;
@@ -14,11 +17,20 @@ import com.opensymphony.xwork2.ActionContext;
 import action.LoginAction;
 import utils.HibernateUtils;
 
+/**
+ * The Class TestLoginAction.
+ */
 public class TestLoginAction {
 
+	/** The action context. */
 	private ActionContext actionContext;
+	
+	/** The login action. */
 	LoginAction loginAction;
 	
+	/**
+	 * Pepare for correct test.
+	 */
 	@Before
 	public void pepareForCorrectTest() {
 		actionContext = Mockito.mock(ActionContext.class);
@@ -27,15 +39,20 @@ public class TestLoginAction {
 		ActionContext.setContext(actionContext);
 	}
 	
+	/**
+	 * Initialize hibernate.
+	 */
 	@Before
 	public void initializeHibernate(){
 		HibernateUtils.start();
-		loginAction = new LoginAction();
 	}
 
+	/**
+	 * Test log in ok.
+	 */
 	@Test
 	public void testLogInOk() {
-		
+		loginAction = new LoginAction();
 		loginAction.setEmail("mike@gmail.com");
 		loginAction.setPassword("0001");
 		try {
@@ -45,9 +62,12 @@ public class TestLoginAction {
 		}
 	}
 	
+	/**
+	 * Test log in not ok.
+	 */
 	@Test
 	public void testLogInNotOk() {
-		
+		loginAction = new LoginAction();
 		loginAction.setEmail("Mike@gmail.com");
 		loginAction.setPassword("0000");
 		try {
@@ -57,9 +77,12 @@ public class TestLoginAction {
 		}
 	}
 	
+	/**
+	 * Test log out ok.
+	 */
 	@Test
 	public void testLogOutOk() {
-		
+		loginAction = new LoginAction();
 		loginAction.setEmail("Emirates@gmail.com");
 		loginAction.setPassword("1234");
 		try {
@@ -69,11 +92,19 @@ public class TestLoginAction {
 		}
 	}
 	
+	/**
+	 * Finish the testing.
+	 */
 	@After
 	public void finishTheTesting() {
 		this.setActionContext(null);
 	}
 	
+	/**
+	 * Sets the action context.
+	 *
+	 * @param actionContext the new action context
+	 */
 	public void setActionContext(final ActionContext actionContext) {
 		this.actionContext = actionContext;
 	}

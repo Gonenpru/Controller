@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package items;
 
 import static org.junit.Assert.*;
@@ -10,20 +13,33 @@ import org.junit.Test;
 import db_items.Flights;
 import utils.HibernateUtils;
 
+/**
+ * The Class TestFlights.
+ */
 public class TestFlights {
 
+	/** The flights. */
 	private Flights flights;
 
+	/**
+	 * Initialize hibernate.
+	 */
 	@Before
 	public void initializeHibernate(){
 		HibernateUtils.start();
 	}
 	
+	/**
+	 * Initialize empty F lights.
+	 */
 	@Before
 	public void initializeEmptyFLights(){
 		flights = new Flights();
 	}
 	
+	/**
+	 * Test flight id.
+	 */
 	@Test
 	public void testFlightId() {
 		int id = 0;
@@ -32,6 +48,9 @@ public class TestFlights {
 
 	}
 	
+	/**
+	 * Test baggage id.
+	 */
 	@Test
 	public void testBaggageId() {
 		int baggage = 0;
@@ -39,6 +58,9 @@ public class TestFlights {
 		assertEquals(baggage, flights.getBaggage_id());
 	}
 	
+	/**
+	 * Test gate id.
+	 */
 	@Test
 	public void testGateId() {
 		int gate = 0;
@@ -47,6 +69,9 @@ public class TestFlights {
 
 	}
 	
+	/**
+	 * Test plane id.
+	 */
 	@Test
 	public void testPlaneId() {
 		int planeId = 0;
@@ -55,6 +80,9 @@ public class TestFlights {
 
 	}
 	
+	/**
+	 * Test route id.
+	 */
 	@Test
 	public void testRouteId() {
 		int route = 0;
@@ -62,6 +90,9 @@ public class TestFlights {
 		assertEquals(route, flights.getRoute_id());
 	}
 	
+	/**
+	 * Test duration.
+	 */
 	@Test
 	public void testDuration() {
 		String duration = "00:30";
@@ -69,6 +100,9 @@ public class TestFlights {
 		assertEquals(duration, flights.getDuration());
 	}
 	
+	/**
+	 * Test delay.
+	 */
 	@Test
 	public void testDelay() {
 		String delay = "00:30";
@@ -77,6 +111,9 @@ public class TestFlights {
 	}
 	
 	
+	/**
+	 * Test date departure.
+	 */
 	@Test
 	public void testDateDeparture() {
 		Timestamp timestamp = new Timestamp(0);
@@ -84,12 +121,18 @@ public class TestFlights {
 		assertEquals(timestamp, flights.getDateDeparture());
 	}
 	
+	/**
+	 * Test flights initializer full.
+	 */
 	@Test
 	public void testFlightsInitializerFull(){
 		flights = new Flights(0, 0, 0, 0, 0, null, null, null);
 		assertEquals(0, flights.getId());
 	}
 	
+	/**
+	 * Test flights initializer medium.
+	 */
 	@Test
 	public void testFlightsInitializerMedium(){
 		flights = new Flights(0, 0, 0, 0, 0);

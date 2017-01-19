@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package suite;
 
 
@@ -11,6 +14,10 @@ import hibernate.*;
 import items.TestFlights;
 import login.TestLoginAction;
 
+/**
+ * The Class SuiteClass.
+ * Run all the tests
+ */
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({
