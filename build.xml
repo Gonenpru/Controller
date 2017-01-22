@@ -184,79 +184,11 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="OtherAction">
+    <target name="test">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="action.OtherAction" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="Controller.classpath"/>
-        </junit>
-    </target>
-    <target name="SuiteClass (1)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="suite.SuiteClass" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="Controller.classpath"/>
-        </junit>
-    </target>
-    <target name="SuiteRunner">
-        <java classname="suite.SuiteRunner" failonerror="true" fork="yes">
-            <classpath refid="Controller.classpath"/>
-        </java>
-    </target>
-    <target name="TestConnectionHibernate">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="hibernate.TestConnectionHibernate" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="Controller.classpath"/>
-        </junit>
-    </target>
-    <target name="TestFlights">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="items.TestFlights" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="Controller.classpath"/>
-        </junit>
-    </target>
-    <target name="TestFlightsAction">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="action.TestFlightsAction" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="Controller.classpath"/>
-        </junit>
-    </target>
-    <target name="TestFlightsDao">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="dao.TestFlightsDao" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="Controller.classpath"/>
-        </junit>
-    </target>
-    <target name="TestInitHibernate">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="hibernate.TestInitHibernate" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="Controller.classpath"/>
-        </junit>
-    </target>
-    <target name="TestLoginAction (1)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="login.TestLoginAction" todir="${junit.output.dir}"/>
+            <test name="suite.SuiteClass.java" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="Controller.classpath"/>
         </junit>
