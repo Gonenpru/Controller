@@ -1,7 +1,15 @@
+sudo: required
+
 language: java
-install: ant deps
-sudo: false
+
 jdk:
   - oraclejdk8
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+
+# safelist
+branches:
+  only:
+  - master  
+
+install: 
+    - ant clean
+    - ant build
