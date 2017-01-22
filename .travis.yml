@@ -8,7 +8,7 @@ jdk:
 # safelist
 branches:
   only:
-  - master  
+  - Travis
 
 install: 
     - ant clean
