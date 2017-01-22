@@ -166,7 +166,6 @@
         <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
             <src path="resources"/>
-            <src path="WebContent"/>
             <src path="test"/>
             <classpath refid="Controller.classpath"/>
         </javac>
